@@ -26,6 +26,12 @@ export default function Home() {
                 <li class="list-group-item">
                   <Link to="/contact"> Contact</Link>
                 </li>
+                <li class="list-group-item">
+                  <Link to="/products"> Products</Link>
+                </li>
+                <li class="list-group-item">
+                  <Link to="/blog"> Blog </Link>
+                </li>
               </ul>
             </div>
           </div>
