@@ -2,6 +2,8 @@ import React, { useContext, createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import Products from '../pages/Products';
+import Blog from '../pages/Blog';
 // import Image from './layout/Images';
 
 export default function Home() {
@@ -52,6 +54,12 @@ export default function Home() {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/products">
+              <Products />
+            </Route>
+            <Route path="/blog">
+              <Blog />
             </Route>
           </Switch>
         </div>
