@@ -56,7 +56,9 @@ export default function Home() {
               <Contact />
             </Route>
             <Route path="/products">
-              <Products />
+              <Products name="Vans Shoes" deskripsi="Sepatu Vans" harga={120000.0} />
+              <Products name="AirJordan Shoes" deskripsi="Sepatu AirJordan" harga={155000.0} />
+              <Products name="Adidas Shoes" deskripsi="Adidas Vans" harga={150000.0} />
             </Route>
             <Route path="/blog">
               <Blog />
