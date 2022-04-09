@@ -7,7 +7,6 @@ function Products(props) {
       <h2>{props.name}</h2>
       <p>{props.deskripsi}</p>
       <p>{props.harga}</p>
-      <p>This is the Products page</p>
     </div>
   );
 }
