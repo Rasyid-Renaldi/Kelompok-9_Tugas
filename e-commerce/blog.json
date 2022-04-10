@@ -1,5 +1,37 @@
 {
-  "posts": [{ "id": 1, "title": "ShoE-Commerce", "author": "rasyed renaldi" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "blog": [
+    {
+      "blogId": 1,
+      "id": 1,
+      "uniqueNo": "1941720177",
+      "name": "Rasyed Renaldi",
+      "brand": "Vans",
+      "status": "Ready"
+    },
+    {
+      "blogId": 1,
+      "id": 2,
+      "uniqueNo": "1941720098",
+      "name": "AirJordan",
+      "brand": "Michael Jordan",
+      "status": "Ready"
+    },
+    {
+      "blogId": 1,
+      "id": 3,
+      "uniqueNo": "1941720545",
+      "name": "Running Shoe",
+      "brand": "Adidas",
+      "status": "Ready"
+    },
+    {
+      "BlogId": 1,
+      "id": 1649560440429,
+      "uniqueNo": "",
+      "name": "Air Jordan ",
+      "brand": "Michael Jordan",
+      "status": "Ready",
+      "nomer unik": "1941720098"
+    }
+  ]
 }
