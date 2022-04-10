@@ -77,7 +77,7 @@ class Blog extends Component {
               Nomer Unik
             </label>
             <div className="col-sm-10">
-              <input type="text" className="form-control" id="nomer unik" name="nomer unik" placeholder="Nomer Unik" onChange={this.handleTambahBlog} />
+              <input type="text" className="form-control" id="uniqueNo" name="uniqueNo" placeholder="Nomer Unik" onChange={this.handleTambahBlog} />
             </div>
           </div>
           <div className="form-group row">
@@ -131,7 +131,7 @@ class Blog extends Component {
           </thead>
           {this.state.listBlog.map((blog) => {
             // looping data mahasiswa yang ada di state
-            return <BlogPost key={blog.id} nama={blog.name} nomer unik={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />; // menampilkan data mahasiswa yang ada di state
+            return <BlogPost key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />; // menampilkan data mahasiswa yang ada di state
           })}
         </table>
       </div>

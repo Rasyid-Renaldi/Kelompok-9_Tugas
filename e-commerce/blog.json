@@ -26,12 +26,11 @@
     },
     {
       "BlogId": 1,
-      "id": 1649560440429,
-      "uniqueNo": "",
-      "name": "Air Jordan ",
-      "brand": "Michael Jordan",
-      "status": "Ready",
-      "nomer unik": "1941720098"
+      "id": 1649561124595,
+      "uniqueNo": "112255",
+      "name": "Al-Husein",
+      "brand": "Adidas",
+      "status": "Ready"
     }
   ]
 }
