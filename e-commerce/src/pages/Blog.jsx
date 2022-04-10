@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BlogPost from '../layout/BlogPost';
+import EditBlog from '../layout/EditBlog';
 
 class Blog extends Component {
   state = {
@@ -140,7 +141,10 @@ class Blog extends Component {
             </tr>
           </thead>
           {this.state.listBlog.map((blog) => {
-            return <BlogPost key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />;
+            return (
+              (<EditBlog key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} editBlog={this.handleUpdateBlog} idBlog={blog.id} />),
+              (<BlogPost key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />)
+            );
           })}
         </table>
       </div>
