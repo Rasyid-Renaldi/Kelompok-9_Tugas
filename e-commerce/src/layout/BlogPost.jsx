@@ -6,7 +6,6 @@ const BlogPost = (props) => {
       <tr>
         <td> {props.uniqueNo} </td>
         <td> {props.name} </td>
-        <td> {props.alamat} </td>
         <td> {props.brand} </td>
         <td> {props.status} </td>
         <td>
