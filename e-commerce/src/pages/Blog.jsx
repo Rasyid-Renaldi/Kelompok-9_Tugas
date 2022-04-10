@@ -3,8 +3,7 @@ import BlogPost from '../layout/BlogPost';
 
 class Blog extends Component {
   state = {
-    // komponen state dari React untuk statedull component
-    listBlog: [], // variable array yang digunakan untuk menyimpan data API
+    listBlog: [],
     InsertBlog: {
       BlogId: 1,
       id: 1,
@@ -16,8 +15,8 @@ class Blog extends Component {
   };
 
   ambilDataDariServerAPI = () => {
-    fetch('http://localhost:3001/blog') // alamat URL API yang akan di ambil
-      .then((response) => response.json()) // response dari API dalam bentuk JSON
+    fetch('http://localhost:3001/blog')
+      .then((response) => response.json())
       .then((jsonHasilAmbilDariAPI) => {
         this.setState({
           listBlog: jsonHasilAmbilDariAPI,
@@ -26,34 +25,26 @@ class Blog extends Component {
   };
 
   componentDidMount() {
-    // fungsi yang akan dijalankan ketika component telah di mount
-    this.ambilDataDariServerAPI(); // ambil data dari server API lokal
+    this.ambilDataDariServerAPI();
   }
 
-  // handle delete button
   handleDeleteBlog = (data) => {
-    // fungsi yang akan di panggil ketika tombol hapus di klik
-    fetch(`http://localhost:3001/blog/${data}`, { method: 'delete' }) // alamat URL API yang akan di ambil
-      .then((res) => {
-        // response dari API dalam bentuk JSON
-        this.ambilDataDariServerAPI();
-      });
+    fetch(`http://localhost:3001/blog/${data}`, { method: 'delete' }).then((res) => {
+      this.ambilDataDariServerAPI();
+    });
   };
 
   handleTambahBlog = (event) => {
-    // fungsi yang akan di panggil ketika tombol tambah di klik
-    let formInsertBlog = { ...this.state.InsertBlog }; // cara membuat variabel baru dengan mengambil value dari state InsertMahasiswa
-    let timestamp = new Date().getTime(); // digunakan untuk mengambil nilai timestamp pada saat proses insert data
-    formInsertBlog['id'] = timestamp; // mengisi field id dengan nilai timestamp
-    formInsertBlog[event.target.name] = event.target.value; // mengisi kolom dengan name inputan dan value inputan
+    let formInsertBlog = { ...this.state.InsertBlog };
+    let timestamp = new Date().getTime();
+    formInsertBlog['id'] = timestamp;
+    formInsertBlog[event.target.name] = event.target.value;
     this.setState({
       InsertBlog: formInsertBlog,
     });
   };
 
-  // tombol simpan
   handleTombolSimpan = () => {
-    //fungsi untuk menghandle tombol simpan
     fetch('http://localhost:3001/Blog', {
       method: 'post',
       headers: {
@@ -62,8 +53,7 @@ class Blog extends Component {
       },
       body: JSON.stringify(this.state.InsertBlog),
     }).then((res) => {
-      // response dari API dalam bentuk JSON
-      this.ambilDataDariServerAPI(); //reload atau refresh data
+      this.ambilDataDariServerAPI();
     });
   };
 
