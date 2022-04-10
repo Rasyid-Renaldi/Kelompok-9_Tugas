@@ -45,7 +45,7 @@ class Blog extends Component {
   };
 
   handleTombolSimpan = () => {
-    fetch('http://localhost:3001/Blog', {
+    fetch('http://localhost:3001/blog', {
       method: 'post',
       headers: {
         Accept: 'application/json',
@@ -56,6 +56,26 @@ class Blog extends Component {
       this.ambilDataDariServerAPI();
     });
   };
+
+  handleUpdateBlog(event) {
+    event.preventDefault();
+    this.state.InsertBlog = this.state.InsertBlog;
+    this.setState({
+      formInsertBlog: this.state.InsertBlog,
+    });
+    return fetch('http://localhost:3001/blog' + this.state.InsertBlog.id, {
+      method: 'PUT',
+      mode: 'CORS',
+      body: this.state.InsertBlog,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => err);
+  }
 
   render() {
     return (
@@ -120,8 +140,7 @@ class Blog extends Component {
             </tr>
           </thead>
           {this.state.listBlog.map((blog) => {
-            // looping data mahasiswa yang ada di state
-            return <BlogPost key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />; // menampilkan data mahasiswa yang ada di state
+            return <BlogPost key={blog.id} name={blog.name} uniqueNo={blog.uniqueNo} brand={blog.brand} status={blog.status} hapusBlog={this.handleDeleteBlog} idBlog={blog.id} />;
           })}
         </table>
       </div>
