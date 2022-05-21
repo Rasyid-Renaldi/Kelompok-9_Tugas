@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EditBlog() {
+function EditBlog(props) {
   return (
     <div className="blog">
       <h2>Tambah Blog</h2>
@@ -47,6 +47,9 @@ function EditBlog() {
           <div className="col-sm-5">
             <button className="btn btn-primary" onClick={this.handleTombolSimpan}>
               Tambah
+            </button>
+            <button className="btn btn-sm btn-success" onClick={() => props.editBlog(props.idBlog)}>
+              Edit
             </button>
           </div>
         </div>
